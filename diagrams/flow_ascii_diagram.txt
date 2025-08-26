@@ -1,0 +1,39 @@
++---------------------------+
+|      NODE POOL: A, B, C   |
++---------------------------+
+
+    (1) Initial Permutations
+       +---------+       +---------+       +---------+
+       | (A, B, C)|  --> | (B, C, A)|  --> | (C, A, B)|
+       +---------+       +---------+       +---------+
+            |                 |                 |
+            v                 v                 v
+
+    (2) Recursive Mapping Function (f)
+       +---------------------------+
+       |  f: (X, Y, Z) → perm(X,Y,Z) |
+       +---------------------------+
+
+            |       |        |
+            v       v        v
+
+     +-------------------------------+
+     | Path transforms recursively   |
+     | Each step carries entropy     |
+     | and changes node identity     |
+     +-------------------------------+
+
+            ↓
+        Recurse until...
+            ↓
+
+    (3) Final Map Resolution (R)
+       +--------------------------+
+       | R(f(...)) = (A, B, C)    |
+       | Final route is reconstructed |
+       | for deterministic delivery |
+       +--------------------------+
+
+            ↓
+        Final Data Routing:
+        A → B → C
